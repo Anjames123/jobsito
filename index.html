@@ -1,60 +1,220 @@
 <!DOCTYPE html>
+<!--
+Job Portal - Root Redirect Page
+
+This is the main entry point for the Job Portal system that provides
+automatic redirection to the actual application folder. Designed to
+handle the common scenario where users access the root domain and
+need to be redirected to the subfolder containing the main application.
+
+Key Features:
+- Automatic redirection using meta refresh tag
+- Visual loading indicator with professional design
+- Fallback JavaScript redirect for reliability
+- User-friendly interface with manual redirect option
+- Responsive design with modern styling
+- Professional loading animation and branding
+
+Redirect Methods Used:
+1. Meta refresh (primary): HTML-based automatic redirect after page load
+2. JavaScript timeout (backup): Ensures redirect even if meta refresh fails
+3. Manual link (failsafe): Provides user-controlled redirect option
+
+Design Features:
+- Modern gradient background for professional appearance
+- Glassmorphism design with backdrop filter effects
+- Loading spinner animation for visual feedback
+- Clear messaging explaining the redirect process
+- Accessible color contrast and typography
+- Mobile-responsive layout design
+
+Technical Implementation:
+- Uses modern CSS features (backdrop-filter, flexbox, animations)
+- Graceful degradation for older browsers
+- Cross-browser compatible redirect methods
+- No external dependencies for fast loading
+- Semantic HTML structure for accessibility
+
+@author Your Name
+@version 1.0
+@since 2024
+-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Portal - Redirecting...</title>
+    
+    <!--
+    PRIMARY REDIRECT METHOD
+    
+    Meta refresh tag provides automatic redirection after page load.
+    The "0" value means immediate redirect without delay, ensuring
+    users are quickly forwarded to the main application.
+    -->
     <meta http-equiv="refresh" content="0; url=job-portal/">
+    
     <style>
+        /*
+        GLOBAL STYLING AND LAYOUT
+        
+        Modern CSS styling using system fonts and flexbox layout
+        for professional appearance and optimal user experience
+        across all devices and browsers.
+        */
         body {
+            /* System font stack for native appearance across platforms */
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            
+            /* Flexbox centering for perfect alignment */
             display: flex;
             justify-content: center;
             align-items: center;
+            
+            /* Full viewport height for centered content */
             min-height: 100vh;
             margin: 0;
+            
+            /* Professional gradient background */
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            
+            /* Text styling for readability */
             color: white;
             text-align: center;
         }
+        
+        /*
+        CONTAINER STYLING
+        
+        Glassmorphism design with backdrop filter for modern
+        appearance and visual separation from background.
+        */
         .container {
+            /* Semi-transparent background for glassmorphism effect */
             background: rgba(255, 255, 255, 0.1);
+            
+            /* Generous padding for content breathing room */
             padding: 2rem;
+            
+            /* Rounded corners for modern appearance */
             border-radius: 10px;
+            
+            /* Backdrop filter for glassmorphism effect */
             backdrop-filter: blur(10px);
         }
+        
+        /*
+        LOADING SPINNER ANIMATION
+        
+        CSS-only loading spinner providing visual feedback
+        during the redirect process with smooth rotation animation.
+        */
         .spinner {
+            /* Centered positioning with automatic margins */
             margin: 20px auto;
+            
+            /* Spinner dimensions */
             width: 40px;
             height: 40px;
+            
+            /* Border styling for spinner appearance */
             border: 4px solid rgba(255, 255, 255, 0.3);
             border-top: 4px solid white;
+            
+            /* Circular shape */
             border-radius: 50%;
+            
+            /* Continuous rotation animation */
             animation: spin 1s linear infinite;
         }
+        
+        /*
+        SPINNER ROTATION KEYFRAMES
+        
+        Defines the continuous rotation animation for the
+        loading spinner with smooth 360-degree rotation.
+        */
         @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+        
+        /*
+        LINK STYLING
+        
+        Styled links for the manual redirect option with
+        appropriate color contrast and hover effects.
+        */
         a {
+            /* Gold color for visibility and branding */
             color: #ffd700;
+            
+            /* Remove default underline */
             text-decoration: none;
         }
     </style>
 </head>
 <body>
+    <!--
+    MAIN CONTENT CONTAINER
+    
+    Centered container with all redirect page content including
+    title, loading animation, status message, and manual redirect option.
+    -->
     <div class="container">
+        <!--
+        PAGE TITLE
+        
+        Clear identification of the Job Portal system
+        for user context and branding consistency.
+        -->
         <h1>Job Portal System</h1>
+        
+        <!--
+        LOADING SPINNER
+        
+        Visual feedback element showing that redirection
+        is in progress and providing professional appearance
+        during the brief loading period.
+        -->
         <div class="spinner"></div>
+        
+        <!--
+        STATUS MESSAGE
+        
+        Informs user about the automatic redirection process
+        for transparency and user experience clarity.
+        -->
         <p>Redirecting to the job portal...</p>
+        
+        <!--
+        MANUAL REDIRECT FALLBACK
+        
+        Provides manual redirect option in case automatic
+        redirection fails, ensuring users always have access
+        to the main application.
+        -->
         <p>If you're not redirected automatically, <a href="job-portal/">click here</a></p>
     </div>
     
     <script>
-        // Backup redirect in case meta refresh doesn't work
+        /*
+        BACKUP JAVASCRIPT REDIRECT
+        
+        Secondary redirect method using JavaScript setTimeout
+        to ensure redirection occurs even if meta refresh fails.
+        Provides additional reliability for user experience.
+        */
+        
+        /*
+        FALLBACK REDIRECT TIMER
+        
+        Sets a 1-second timeout before triggering JavaScript redirect.
+        This allows the meta refresh to work first while providing
+        backup functionality for edge cases.
+        */
         setTimeout(() => {
             window.location.href = 'job-portal/';
         }, 1000);
     </script>
 </body>
-</html>

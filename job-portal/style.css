@@ -1,306 +1,627 @@
-/* Job Portal CSS Styles */
+/**
+ * Job Portal CSS Styles
+ * 
+ * Comprehensive stylesheet for the Job Portal web application providing:
+ * - Modern gradient-based design system
+ * - Responsive layout for all device sizes
+ * - Interactive animations and hover effects
+ * - Custom component styling for forms, cards, and navigation
+ * - Accessibility improvements and visual enhancements
+ * 
+ * Design Philosophy:
+ * - Purple/blue gradient theme (#667eea to #764ba2)
+ * - Clean, modern interface with subtle shadows and rounded corners
+ * - Smooth transitions and hover effects for better user experience
+ * - Mobile-first responsive design approach
+ * 
+ * Color Palette:
+ * - Primary: #667eea (Light Purple Blue)
+ * - Secondary: #764ba2 (Dark Purple)
+ * - Background: #f8f9fa (Light Gray)
+ * - Text: #333 (Dark Gray)
+ * - Success: #4CAF50 (Green)
+ * - Warning: #ff9800 (Orange)
+ * - Danger: #f44336 (Red)
+ * 
+ * @author Your Name
+ * @version 1.0
+ * @since 2024
+ */
+
+/**
+ * GLOBAL RESET AND BASE STYLES
+ * 
+ * Implements a clean slate approach by removing default browser
+ * margins and paddings, ensuring consistent box-sizing behavior
+ * across all elements for predictable layout calculations.
+ */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Includes padding and border in element width/height */
 }
 
+/**
+ * BODY BASE STYLES
+ * 
+ * Establishes the foundation typography and color scheme for the
+ * entire application. Uses system fonts for optimal performance
+ * and readability across different operating systems.
+ */
 body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f8f9fa;
+    font-family: 'Arial', sans-serif; /* Widely supported, clean font */
+    line-height: 1.6; /* Improves text readability */
+    color: #333; /* Dark gray for good contrast */
+    background-color: #f8f9fa; /* Light gray background */
 }
 
-/* Navigation */
+/**
+ * NAVIGATION BAR STYLES
+ * 
+ * Creates an attractive header with gradient background and
+ * interactive hover effects. The gradient and shadow provide
+ * visual hierarchy and modern aesthetic appeal.
+ */
 .navbar {
+    /* Primary brand gradient - creates visual brand identity */
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    padding: 1rem 0;
+    padding: 1rem 0; /* Vertical spacing for comfortable touch targets */
+    /* Subtle shadow for depth and separation from content */
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
+/**
+ * BRAND LOGO STYLING
+ * 
+ * Makes the brand prominent and clickable with increased
+ * font size and weight. White color ensures visibility
+ * against the gradient background.
+ */
 .navbar-brand {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: white !important;
+    font-size: 1.8rem; /* Larger than default for prominence */
+    font-weight: bold; /* Emphasizes brand importance */
+    color: white !important; /* Override Bootstrap defaults */
 }
 
+/**
+ * NAVIGATION LINK STYLES
+ * 
+ * Provides interactive navigation with smooth hover transitions.
+ * The semi-transparent hover background maintains readability
+ * while providing visual feedback.
+ */
 .navbar-nav .nav-link {
-    color: white !important;
-    margin: 0 0.5rem;
-    transition: all 0.3s ease;
+    color: white !important; /* Consistent with brand */
+    margin: 0 0.5rem; /* Spacing between navigation items */
+    transition: all 0.3s ease; /* Smooth hover animations */
 }
 
 .navbar-nav .nav-link:hover {
+    /* Semi-transparent white overlay on hover */
     background-color: rgba(255,255,255,0.2);
-    border-radius: 5px;
+    border-radius: 5px; /* Rounded hover effect */
 }
 
-/* Cards */
+/**
+ * CARD COMPONENT STYLES
+ * 
+ * Defines the primary content container styling with modern
+ * flat design principles. Includes hover effects for interactive
+ * elements and consistent spacing throughout the application.
+ */
 .card {
-    border: none;
-    border-radius: 15px;
+    border: none; /* Remove default Bootstrap border */
+    border-radius: 15px; /* Modern rounded corners */
+    /* Subtle shadow for depth without overwhelming the design */
     box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    /* Smooth transitions for interactive hover effects */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.5rem; /* Consistent vertical spacing */
 }
 
+/**
+ * CARD HOVER EFFECTS
+ * 
+ * Creates engaging micro-interactions when users hover over
+ * cards. The lift effect and enhanced shadow provide immediate
+ * visual feedback indicating interactivity.
+ */
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px); /* Subtle lift effect */
+    /* Enhanced shadow on hover for depth */
     box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
+/**
+ * CARD HEADER STYLING
+ * 
+ * Applies consistent branding to card headers using the
+ * primary gradient. The rounded top corners maintain the
+ * card's overall rounded aesthetic.
+ */
 .card-header {
+    /* Matches navbar gradient for brand consistency */
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    border-radius: 15px 15px 0 0 !important;
-    font-weight: bold;
+    color: white; /* High contrast for readability */
+    border-radius: 15px 15px 0 0 !important; /* Rounded top only */
+    font-weight: bold; /* Emphasizes header importance */
 }
 
-/* Buttons */
+/**
+ * BUTTON STYLING SYSTEM
+ * 
+ * Comprehensive button styles following the application's
+ * design language. Each button type uses gradients and
+ * hover effects for consistent, engaging interactions.
+ */
+
+/**
+ * PRIMARY BUTTON (Main Actions)
+ * 
+ * Used for primary actions like form submissions and
+ * important navigation. Features the brand gradient
+ * and sophisticated hover animations.
+ */
 .btn-primary {
+    /* Brand gradient for primary actions */
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border: none;
-    border-radius: 25px;
-    padding: 0.7rem 1.5rem;
-    transition: all 0.3s ease;
+    border: none; /* Clean, borderless design */
+    border-radius: 25px; /* Pill-shaped for modern look */
+    padding: 0.7rem 1.5rem; /* Comfortable touch target */
+    transition: all 0.3s ease; /* Smooth hover animations */
 }
 
 .btn-primary:hover {
-    transform: translateY(-2px);
+    transform: translateY(-2px); /* Subtle lift on hover */
+    /* Brand-colored shadow for depth */
     box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
 }
 
+/**
+ * SUCCESS BUTTON (Positive Actions)
+ * 
+ * Green gradient for positive actions like approvals,
+ * confirmations, and successful operations.
+ */
 .btn-success {
     background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
     border: none;
     border-radius: 25px;
 }
 
+/**
+ * WARNING BUTTON (Caution Actions)
+ * 
+ * Orange gradient for actions requiring user attention
+ * or potential consequences like editing or temporary actions.
+ */
 .btn-warning {
     background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
     border: none;
     border-radius: 25px;
 }
 
+/**
+ * DANGER BUTTON (Destructive Actions)
+ * 
+ * Red gradient for destructive or irreversible actions
+ * like deletions, rejections, or cancellations.
+ */
 .btn-danger {
     background: linear-gradient(135deg, #f44336 0%, #d32f2f 100%);
     border: none;
     border-radius: 25px;
 }
 
-/* Forms */
+/**
+ * FORM INPUT STYLING
+ * 
+ * Enhanced form controls with modern styling and smooth
+ * focus transitions. Improves user experience during
+ * form interactions with visual feedback.
+ */
 .form-control {
-    border-radius: 10px;
-    border: 2px solid #e9ecef;
-    transition: all 0.3s ease;
+    border-radius: 10px; /* Rounded for modern appearance */
+    border: 2px solid #e9ecef; /* Subtle border for definition */
+    transition: all 0.3s ease; /* Smooth focus transitions */
 }
 
+/**
+ * FORM INPUT FOCUS STATES
+ * 
+ * Provides clear visual feedback when users interact with
+ * form fields. The brand-colored border and shadow indicate
+ * active field and improve accessibility.
+ */
 .form-control:focus {
-    border-color: #667eea;
+    border-color: #667eea; /* Brand color for focus */
+    /* Brand-colored focus shadow for accessibility */
     box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
 }
 
-/* Hero Section */
+/**
+ * HERO SECTION STYLING
+ * 
+ * Creates an impactful landing area with prominent messaging.
+ * Uses the brand gradient and large typography to capture
+ * user attention and establish visual hierarchy.
+ */
 .hero-section {
+    /* Full-width brand gradient background */
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    padding: 4rem 0;
-    text-align: center;
+    color: white; /* High contrast for readability */
+    padding: 4rem 0; /* Generous spacing for prominence */
+    text-align: center; /* Centered content for impact */
 }
 
+/**
+ * HERO HEADING STYLING
+ * 
+ * Large, bold heading for maximum impact and brand messaging.
+ * Sized for desktop viewing with responsive adjustments.
+ */
 .hero-section h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    font-weight: bold;
+    font-size: 3rem; /* Large, impactful heading */
+    margin-bottom: 1rem; /* Spacing from description */
+    font-weight: bold; /* Emphasizes importance */
 }
 
+/**
+ * HERO DESCRIPTION STYLING
+ * 
+ * Supporting text with subtle transparency to create
+ * visual hierarchy while maintaining readability.
+ */
 .hero-section p {
-    font-size: 1.2rem;
-    opacity: 0.9;
+    font-size: 1.2rem; /* Larger than body text */
+    opacity: 0.9; /* Slight transparency for hierarchy */
 }
 
-/* Status Badges */
+/**
+ * STATUS BADGE SYSTEM
+ * 
+ * Provides consistent visual indicators for various
+ * application states. Used throughout the application
+ * for job statuses, user roles, and system states.
+ */
+
+/**
+ * BASE STATUS BADGE STYLING
+ * 
+ * Common styling for all status badges with pill shape
+ * and prominent typography for quick recognition.
+ */
 .status-badge {
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 0.8rem;
+    padding: 0.5rem 1rem; /* Comfortable padding */
+    border-radius: 20px; /* Pill-shaped for modern look */
+    font-weight: bold; /* Prominent text */
+    text-transform: uppercase; /* Consistent formatting */
+    font-size: 0.8rem; /* Smaller, compact text */
 }
 
+/**
+ * INDIVIDUAL STATUS COLORS
+ * 
+ * Each status type has distinct colors following
+ * standard UI conventions for immediate recognition.
+ */
 .status-pending {
-    background-color: #ffc107;
-    color: #212529;
+    background-color: #ffc107; /* Yellow for pending/waiting */
+    color: #212529; /* Dark text for contrast */
 }
 
 .status-interview {
-    background-color: #17a2b8;
-    color: white;
+    background-color: #17a2b8; /* Blue for in-progress */
+    color: white; /* White text for contrast */
 }
 
 .status-approved {
-    background-color: #28a745;
+    background-color: #28a745; /* Green for positive outcomes */
     color: white;
 }
 
 .status-rejected {
-    background-color: #dc3545;
+    background-color: #dc3545; /* Red for negative outcomes */
     color: white;
 }
 
-/* Job Cards */
+/**
+ * JOB CARD SPECIFIC STYLING
+ * 
+ * Enhanced interactivity for job listing cards with
+ * hover effects and metadata organization.
+ */
 .job-card {
-    transition: all 0.3s ease;
-    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth hover transitions */
+    cursor: pointer; /* Indicates clickable content */
 }
 
 .job-card:hover {
-    transform: translateY(-3px);
+    transform: translateY(-3px); /* Subtle lift effect */
 }
 
+/**
+ * JOB METADATA STYLING
+ * 
+ * Organizes job information (location, salary, type)
+ * in a clean, scannable format with icon integration.
+ */
 .job-meta {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin: 1rem 0;
-    color: #6c757d;
+    display: flex; /* Horizontal layout */
+    align-items: center; /* Vertical alignment */
+    gap: 1rem; /* Consistent spacing between items */
+    margin: 1rem 0; /* Vertical spacing */
+    color: #6c757d; /* Muted color for secondary info */
 }
 
 .job-meta i {
-    color: #667eea;
+    color: #667eea; /* Brand color for icons */
 }
 
-/* Upload Area */
+/**
+ * FILE UPLOAD AREA STYLING
+ * 
+ * Creates an intuitive drag-and-drop upload interface
+ * with visual feedback for user interactions. Follows
+ * modern file upload UI patterns.
+ */
 .upload-area {
-    border: 2px dashed #667eea;
-    border-radius: 10px;
-    padding: 2rem;
-    text-align: center;
-    transition: all 0.3s ease;
-    cursor: pointer;
+    border: 2px dashed #667eea; /* Dashed border indicates drop zone */
+    border-radius: 10px; /* Consistent with form elements */
+    padding: 2rem; /* Generous space for file dropping */
+    text-align: center; /* Centered instructions */
+    transition: all 0.3s ease; /* Smooth state transitions */
+    cursor: pointer; /* Indicates clickable area */
 }
 
+/**
+ * UPLOAD AREA HOVER STATE
+ * 
+ * Provides visual feedback when user hovers over
+ * the upload area, indicating interactivity.
+ */
 .upload-area:hover {
+    /* Light brand color background on hover */
     background-color: rgba(102, 126, 234, 0.05);
 }
 
+/**
+ * UPLOAD AREA DRAG STATE
+ * 
+ * Enhanced visual feedback during file drag operations
+ * with stronger background color and border changes.
+ */
 .upload-area.dragover {
+    /* More prominent background during drag */
     background-color: rgba(102, 126, 234, 0.1);
-    border-color: #4c63d2;
+    border-color: #4c63d2; /* Darker border for emphasis */
 }
 
-/* Dashboard Stats */
+/**
+ * DASHBOARD STATISTICS STYLING
+ * 
+ * Creates attractive stat cards for dashboard metrics
+ * using the brand gradient and prominent typography.
+ */
 .stat-card {
+    /* Brand gradient for visual consistency */
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    border-radius: 15px;
-    padding: 1.5rem;
-    text-align: center;
+    color: white; /* High contrast */
+    border-radius: 15px; /* Consistent with card styling */
+    padding: 1.5rem; /* Comfortable spacing */
+    text-align: center; /* Centered metric presentation */
 }
 
+/**
+ * STATISTIC NUMBER STYLING
+ * 
+ * Large, prominent numbers for key metrics with
+ * bold weight for immediate impact and recognition.
+ */
 .stat-number {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
+    font-size: 2.5rem; /* Large, prominent display */
+    font-weight: bold; /* Emphasizes importance */
+    margin-bottom: 0.5rem; /* Spacing from label */
 }
 
-/* Responsive */
+/**
+ * RESPONSIVE DESIGN BREAKPOINTS
+ * 
+ * Adjusts layout and typography for mobile devices
+ * ensuring optimal user experience across all screen sizes.
+ */
 @media (max-width: 768px) {
+    /**
+     * MOBILE HERO ADJUSTMENTS
+     * 
+     * Reduces hero text size for better mobile readability
+     * and prevents layout overflow on smaller screens.
+     */
     .hero-section h1 {
-        font-size: 2rem;
+        font-size: 2rem; /* Smaller heading for mobile */
     }
     
+    /**
+     * MOBILE NAVIGATION ADJUSTMENTS
+     * 
+     * Reduces brand size for mobile navigation while
+     * maintaining visual hierarchy and brand recognition.
+     */
     .navbar-brand {
-        font-size: 1.5rem;
+        font-size: 1.5rem; /* Smaller brand for mobile */
     }
     
+    /**
+     * MOBILE CARD SPACING
+     * 
+     * Reduces card margins for mobile to maximize
+     * content area while maintaining visual separation.
+     */
     .card {
-        margin-bottom: 1rem;
+        margin-bottom: 1rem; /* Reduced margin for mobile */
     }
 }
 
-/* Animations */
+/**
+ * ANIMATION DEFINITIONS
+ * 
+ * Custom animations for enhanced user experience
+ * and smooth content transitions throughout the application.
+ */
+
+/**
+ * FADE-IN ANIMATION
+ * 
+ * Smooth entrance animation for content loading
+ * with vertical movement for natural feel.
+ */
 @keyframes fadeIn {
     from {
-        opacity: 0;
-        transform: translateY(20px);
+        opacity: 0; /* Start invisible */
+        transform: translateY(20px); /* Start slightly below */
     }
     to {
-        opacity: 1;
-        transform: translateY(0);
+        opacity: 1; /* End fully visible */
+        transform: translateY(0); /* End in normal position */
     }
 }
 
+/**
+ * FADE-IN CLASS APPLICATION
+ * 
+ * Utility class for applying fade-in animation
+ * to any element requiring smooth entrance effects.
+ */
 .fade-in {
-    animation: fadeIn 0.6s ease-out;
+    animation: fadeIn 0.6s ease-out; /* Smooth, natural timing */
 }
 
-/* Loading Spinner */
+/**
+ * LOADING SPINNER STYLING
+ * 
+ * Provides visual feedback during loading operations
+ * with brand-colored animation and centered positioning.
+ */
 .spinner {
-    border: 4px solid #f3f3f3;
-    border-top: 4px solid #667eea;
-    border-radius: 50%;
-    width: 40px;
+    border: 4px solid #f3f3f3; /* Light gray base */
+    border-top: 4px solid #667eea; /* Brand color accent */
+    border-radius: 50%; /* Perfect circle */
+    width: 40px; /* Standard size */
     height: 40px;
-    animation: spin 1s linear infinite;
-    margin: 20px auto;
+    animation: spin 1s linear infinite; /* Continuous rotation */
+    margin: 20px auto; /* Centered positioning */
 }
 
+/**
+ * SPINNER ROTATION ANIMATION
+ * 
+ * Smooth, continuous rotation animation for loading
+ * indicators with consistent timing.
+ */
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% { transform: rotate(0deg); } /* Start position */
+    100% { transform: rotate(360deg); } /* Full rotation */
 }
 
-/* Custom Scrollbar */
+/**
+ * CUSTOM SCROLLBAR STYLING
+ * 
+ * Enhances the default browser scrollbar with
+ * brand colors and modern styling for better
+ * visual integration with the application design.
+ */
+
+/**
+ * SCROLLBAR TRACK AND THUMB SIZING
+ * 
+ * Sets consistent width and appearance for
+ * webkit-based browsers (Chrome, Safari, Edge).
+ */
 ::-webkit-scrollbar {
-    width: 8px;
+    width: 8px; /* Thin, unobtrusive width */
 }
 
 ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: #f1f1f1; /* Light gray track */
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #667eea;
-    border-radius: 4px;
+    background: #667eea; /* Brand colored thumb */
+    border-radius: 4px; /* Rounded for consistency */
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #5a6fd8;
+    background: #5a6fd8; /* Darker on hover */
 }
 
-/* Alert Improvements */
+/**
+ * ENHANCED ALERT STYLING
+ * 
+ * Improves default Bootstrap alerts with gradients
+ * and consistent styling matching the application theme.
+ */
 .alert {
-    border-radius: 10px;
-    border: none;
+    border-radius: 10px; /* Consistent rounded corners */
+    border: none; /* Clean, borderless design */
 }
 
+/**
+ * SUCCESS ALERT STYLING
+ * 
+ * Green gradient for positive messages and confirmations
+ * with appropriate text color for optimal readability.
+ */
 .alert-success {
     background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
-    color: #155724;
+    color: #155724; /* Dark green for contrast */
 }
 
+/**
+ * DANGER ALERT STYLING
+ * 
+ * Red gradient for error messages and warnings
+ * with high contrast text for immediate attention.
+ */
 .alert-danger {
     background: linear-gradient(135deg, #f8d7da 0%, #f1b0b7 100%);
-    color: #721c24;
+    color: #721c24; /* Dark red for contrast */
 }
 
+/**
+ * INFO ALERT STYLING
+ * 
+ * Blue gradient for informational messages
+ * maintaining readability and visual hierarchy.
+ */
 .alert-info {
     background: linear-gradient(135deg, #d1ecf1 0%, #b6e3ed 100%);
-    color: #0c5460;
+    color: #0c5460; /* Dark blue for contrast */
 }
 
-/* Table Improvements */
+/**
+ * TABLE ENHANCEMENT STYLING
+ * 
+ * Modernizes Bootstrap tables with rounded corners,
+ * shadows, and brand-colored headers for improved
+ * visual appeal and data presentation.
+ */
 .table {
-    border-radius: 10px;
-    overflow: hidden;
+    border-radius: 10px; /* Rounded table corners */
+    overflow: hidden; /* Clip content to rounded border */
+    /* Shadow for depth and separation */
     box-shadow: 0 0 20px rgba(0,0,0,0.1);
 }
 
+/**
+ * TABLE HEADER STYLING
+ * 
+ * Brand-colored table headers with white text
+ * for clear data hierarchy and visual consistency.
+ */
 .table thead th {
+    /* Brand gradient for header background */
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    border: none;
-    font-weight: bold;
+    color: white; /* High contrast text */
+    border: none; /* Clean, borderless design */
+    font-weight: bold; /* Emphasizes column headers */
 }
